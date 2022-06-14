@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/startingFragment">
+
+    <fragment
+        android:id="@+id/startingFragment"
+        android:name="com.example.roomdaodatabase.presentation.StartingFragment"
+        android:label="StartingFragment" >
+        <action
+            android:id="@+id/action_startingFragment_to_suppliersListFragment"
+            app:destination="@id/suppliersListFragment" />
+        <action
+            android:id="@+id/action_startingFragment_to_shopsListFragment"
+            app:destination="@id/shopsListFragment" />
+        <action
+            android:id="@+id/action_startingFragment_to_productsListFragment"
+            app:destination="@id/productsListFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/shopsListFragment"
+        android:name="com.example.roomdaodatabase.presentation.ShopsListFragment"
+        android:label="ShopsListFragment" >
+        <action
+            android:id="@+id/action_shopsListFragment_to_addShopFragment"
+            app:destination="@id/addShopFragment" />
+        <action
+            android:id="@+id/action_shopsListFragment_to_employeesListFragment"
+            app:destination="@id/employeesListFragment" />
+        <action
+            android:id="@+id/action_shopsListFragment_to_leftoversListFragment"
+            app:destination="@id/leftoversListFragment" />
+        <action
+            android:id="@+id/action_shopsListFragment_to_ordersListFragment"
+            app:destination="@id/ordersListFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/suppliersListFragment"
+        android:name="com.example.roomdaodatabase.presentation.SuppliersListFragment"
+        android:label="SuppliersListFragment" >
+        <action
+            android:id="@+id/action_suppliersListFragment_to_addSupplierFragment"
+            app:destination="@id/addSupplierFragment" />
+        <action
+            android:id="@+id/action_suppliersListFragment_to_ordersListFragment"
+            app:destination="@id/ordersListFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/productsListFragment"
+        android:name="com.example.roomdaodatabase.presentation.ProductsListFragment"
+        android:label="ProductsListFragment" >
+        <action
+            android:id="@+id/action_productsListFragment_to_addProductFragment"
+            app:destination="@id/addProductFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/addShopFragment"
+        android:name="com.example.roomdaodatabase.presentation.AddShopFragment"
+        android:label="AddShopFragment" />
+    <fragment
+        android:id="@+id/employeesListFragment"
+        android:name="com.example.roomdaodatabase.presentation.EmployeesListFragment"
+        android:label="EmployeesListFragment" >
+        <argument
+            android:name="shoId"
+            app:argType="long" />
+        <action
+            android:id="@+id/action_employeesListFragment_to_addEmployeeFragment"
+            app:destination="@id/addEmployeeFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/addEmployeeFragment"
+        android:name="com.example.roomdaodatabase.presentation.AddEmployeeFragment"
+        android:label="AddEmployeeFragment" >
+        <argument
+            android:name="shopId"
+            app:argType="long" />
+    </fragment>
+    <fragment
+        android:id="@+id/addSupplierFragment"
+        android:name="com.example.roomdaodatabase.presentation.AddSupplierFragment"
+        android:label="AddSupplierFragment" />
+    <fragment
+        android:id="@+id/addProductFragment"
+        android:name="com.example.roomdaodatabase.presentation.AddProductFragment"
+        android:label="AddProductFragment" />
+    <fragment
+        android:id="@+id/leftoversListFragment"
+        android:name="com.example.roomdaodatabase.presentation.LeftoversListFragment"
+        android:label="LeftoversListFragment" >
+        <argument
+            android:name="shopId"
+            app:argType="long" />
+        <action
+            android:id="@+id/action_leftoversListFragment_to_addLeftoversProductFragment"
+            app:destination="@id/addLeftoversProductFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/addLeftoversProductFragment"
+        android:name="com.example.roomdaodatabase.presentation.AddLeftoversProductFragment"
+        android:label="AddLeftoversProductFragment" >
+        <argument
+            android:name="shopId"
+            app:argType="long" />
+    </fragment>
+    <fragment
+        android:id="@+id/ordersListFragment"
+        android:name="com.example.roomdaodatabase.presentation.OrdersListFragment"
+        android:label="OrdersListFragment" >
+        <argument
+            android:name="id"
+            app:argType="long" />
+        <argument
+            android:name="type"
+            app:argType="string" />
+    </fragment>
+</navigation>

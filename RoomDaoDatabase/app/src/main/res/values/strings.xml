@@ -1,0 +1,24 @@
+<resources>
+    <string name="app_name">RoomDaoDatabase</string>
+    <string name="shops">Shops</string>
+    <string name="suppliers">Suppliers</string>
+    <string name="products">Products</string>
+    <string name="add_product">Add product</string>
+    <string name="add_shop">Add shop</string>
+    <string name="add_supplier">Add supplier</string>
+    <string name="title_shop">Title Shop</string>
+    <string name="address_shop">Address shop</string>
+    <string name="name_employee">Name employee</string>
+    <string name="address_employee">Address employee</string>
+    <string name="add_employee">Add employee</string>
+    <string name="title_supplier">Title supplier</string>
+    <string name="address_suplier">Address suplier</string>
+    <string name="title_product">Title product</string>
+    <string name="employees">Employees</string>
+    <string name="leftovers">Leftovers</string>
+    <string name="add_product_in_leftovers">Add product in leftovers</string>
+    <string name="dismiss_employee">Dismiss employee</string>
+    <string name="orders">Orders</string>
+    <string name="status_order">Status: %1$s</string>
+    <string name="age_employee">Age employee</string>
+</resources>
