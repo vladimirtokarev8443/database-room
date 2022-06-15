@@ -14,7 +14,8 @@ import com.example.roomdaodatabase.databinding.FragmentProductsListBinding
 class ProductsListFragment: Fragment(R.layout.fragment_products_list) {
     private var _binding: FragmentProductsListBinding? = null
     private val binding get() = _binding!!
-    private val viewModel: SharedViewModel by viewModels()
+    //private val viewModel: SharedViewModel by viewModels()
+    private val viewModel: ProductsListViewModel by viewModels()
     private var productAndSupplierAdapter: ProductAndSupplierAdapter? = null
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -42,7 +43,6 @@ class ProductsListFragment: Fragment(R.layout.fragment_products_list) {
 
     private fun bindViewModel(){
         viewModel.suppliersWithProductsAndSupplier.observe(viewLifecycleOwner){
-            Log.d("testR", "${it}")
             productAndSupplierAdapter?.items = it
         }
     }

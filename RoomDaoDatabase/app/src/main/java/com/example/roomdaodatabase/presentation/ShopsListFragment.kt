@@ -15,7 +15,8 @@ import com.example.roomdaodatabase.enum.TypeEntity
 class ShopsListFragment: Fragment(R.layout.fragment_shops_list) {
     private var _binding: FragmentShopsListBinding? = null
     private val binding get() = _binding!!
-    private val viewModel: SharedViewModel by viewModels()
+    //private val viewModel: SharedViewModel by viewModels()
+    private val viewModel: ShopsListViewModel by viewModels()
     private var addressAndShopAdapter: AddressAndShopAdapter? = null
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -61,7 +62,6 @@ class ShopsListFragment: Fragment(R.layout.fragment_shops_list) {
 
     private fun bindViewModel(){
         viewModel.addressAndShops.observe(viewLifecycleOwner){
-            Log.d("testR", "${it}")
             addressAndShopAdapter?.items = it
         }
     }

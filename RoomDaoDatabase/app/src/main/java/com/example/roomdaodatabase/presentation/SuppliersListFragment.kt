@@ -14,7 +14,8 @@ import com.example.roomdaodatabase.enum.TypeEntity
 class SuppliersListFragment: Fragment(R.layout.fragment_suppliers_list) {
     private var _binding: FragmentSuppliersListBinding? = null
     private val binding get() = _binding!!
-    private val viewModel: SharedViewModel by viewModels()
+    //private val viewModel: SharedViewModel by viewModels()
+    private val viewModel: SuppliersListViewModel by viewModels()
     private var addressAndSupplierAdapter: AddressAndSupplierAdapter? = null
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {

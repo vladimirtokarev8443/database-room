@@ -1,4 +1,4 @@
-package com.example.roomdaodatabase.data
+package com.example.roomdaodatabase.data.db
 
 import android.content.Context
 import androidx.room.Room

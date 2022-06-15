@@ -1,5 +1,6 @@
 package com.example.roomdaodatabase.data
 
+import com.example.roomdaodatabase.data.db.Database
 import com.example.roomdaodatabase.data.models.*
 import kotlinx.coroutines.flow.Flow
 
@@ -24,9 +25,9 @@ class SharedRepository {
         shopDao.insertShop(shop)
     }
 
-    suspend fun getAddressAndShop(): List<AddressAndShop>{
-        return addressDao.getAddressAndShop()
-    }
+//    suspend fun getAddressAndShop(): List<AddressAndShop>{
+//        return addressDao.getAddressAndShop()
+//    }
 
     suspend fun getTitleShopById(shopId: Long): String{
         return shopDao.getTitleShopById(shopId)
@@ -50,10 +51,11 @@ class SharedRepository {
         supplierDao.insertSupplier(supplier)
     }
 
-    suspend fun getAddressAndSupplier(): List<AddressAndSupplier>{
-        return addressDao.getAddressAndSupplier()
-    }
+//    suspend fun getAddressAndSupplier(): List<AddressAndSupplier>{
+//        return addressDao.getAddressAndSupplier()
+//    }
 
+    //???
     suspend fun getAllSuppliers():List<Supplier>{
         return supplierDao.getAllSuppliers()
     }
@@ -66,7 +68,7 @@ class SharedRepository {
     suspend fun insertProduct(product: Product){
         productDao.insertProduct(product)
     }
-
+//???
     suspend fun getAllProducts(): List<Product>{
         return productDao.getAllProducts()
     }

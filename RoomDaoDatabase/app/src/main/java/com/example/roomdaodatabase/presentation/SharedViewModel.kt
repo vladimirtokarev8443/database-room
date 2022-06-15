@@ -6,7 +6,7 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import androidx.room.withTransaction
-import com.example.roomdaodatabase.data.Database
+import com.example.roomdaodatabase.data.db.Database
 import com.example.roomdaodatabase.data.SharedRepository
 import com.example.roomdaodatabase.data.models.*
 import com.example.roomdaodatabase.enum.OrderStatus
@@ -20,21 +20,21 @@ class SharedViewModel: ViewModel() {
     val addressIdLiveData: LiveData<Long>
     get() = addressIdMutLiveData
 
-    private val addressAndShopsMut = MutableLiveData<List<AddressAndShop>>()
-    val addressAndShops: LiveData<List<AddressAndShop>>
-    get() = addressAndShopsMut
+//    private val addressAndShopsMut = MutableLiveData<List<AddressAndShop>>()
+//    val addressAndShops: LiveData<List<AddressAndShop>>
+//    get() = addressAndShopsMut
 
     private val addressAndEmployeesMut = MutableLiveData<List<AddressAndEmployee>>()
     val addressAndEmployees: LiveData<List<AddressAndEmployee>>
     get() = addressAndEmployeesMut
 
-    private val addressAndSuppliersMut = MutableLiveData<List<AddressAndSupplier>>()
-    val addressAndSuppliers: LiveData<List<AddressAndSupplier>>
-    get() = addressAndSuppliersMut
+//    private val addressAndSuppliersMut = MutableLiveData<List<AddressAndSupplier>>()
+//    val addressAndSuppliers: LiveData<List<AddressAndSupplier>>
+//    get() = addressAndSuppliersMut
 
-    private val suppliersWithProductsMut = MutableLiveData<List<ProductAndSupplier>>()
-    val suppliersWithProductsAndSupplier: LiveData<List<ProductAndSupplier>>
-    get() = suppliersWithProductsMut
+//    private val suppliersWithProductsMut = MutableLiveData<List<ProductAndSupplier>>()
+//    val suppliersWithProductsAndSupplier: LiveData<List<ProductAndSupplier>>
+//    get() = suppliersWithProductsMut
 
     private val suppliersMutLiveData = MutableLiveData<List<Supplier>>()
     val supplierLiveData: LiveData<List<Supplier>>
@@ -167,15 +167,15 @@ class SharedViewModel: ViewModel() {
         }
     }
 
-    fun getAddressAndShops(){
-        viewModelScope.launch {
-            val filterListByNull = repository.getAddressAndShop().filter {
-                it.shop !=null
-            }
-            addressAndShopsMut.postValue(filterListByNull)
-
-        }
-    }
+//    fun getAddressAndShops(){
+//        viewModelScope.launch {
+//            val filterListByNull = repository.getAddressAndShop().filter {
+//                it.shop !=null
+//            }
+//            addressAndShopsMut.postValue(filterListByNull)
+//
+//        }
+//    }
 
     fun getAddressAndEmployees(shopId: Long){
         viewModelScope.launch {
@@ -186,33 +186,33 @@ class SharedViewModel: ViewModel() {
         }
     }
 
-    fun getAddresAndSuppliers(){
-        viewModelScope.launch {
-           val filterListByNull = repository.getAddressAndSupplier().filter {
-                it.supplier != null
-            }
-            addressAndSuppliersMut.postValue(filterListByNull)
-        }
-    }
+//    fun getAddresAndSuppliers(){
+//        viewModelScope.launch {
+//           val filterListByNull = repository.getAddressAndSupplier().filter {
+//                it.supplier != null
+//            }
+//            addressAndSuppliersMut.postValue(filterListByNull)
+//        }
+//    }
 
 
-    fun getProductAndSupplier(){
-        viewModelScope.launch {
-            var productAndSuppliers = emptyList<ProductAndSupplier>()
-            val products = repository.getAllProducts()
-            val suppliers = repository.getAllSuppliers()
-
-            products.forEach{product ->
-                suppliers.forEach { supplier ->
-                    if (supplier.id == product.supplierId){
-                        productAndSuppliers = productAndSuppliers + listOf(ProductAndSupplier(supplier.title, product))
-                    }
-                }
-            }
-
-            suppliersWithProductsMut.postValue(productAndSuppliers)
-        }
-    }
+//    fun getProductAndSupplier(){
+//        viewModelScope.launch {
+//            var productAndSuppliers = emptyList<ProductAndSupplier>()
+//            val products = repository.getAllProducts()
+//            val suppliers = repository.getAllSuppliers()
+//
+//            products.forEach{product ->
+//                suppliers.forEach { supplier ->
+//                    if (supplier.id == product.supplierId){
+//                        productAndSuppliers = productAndSuppliers + listOf(ProductAndSupplier(supplier.title, product))
+//                    }
+//                }
+//            }
+//
+//            suppliersWithProductsMut.postValue(productAndSuppliers)
+//        }
+//    }
 
     fun getLeftoversByShopId(shopId: Long){
         viewModelScope.launch {

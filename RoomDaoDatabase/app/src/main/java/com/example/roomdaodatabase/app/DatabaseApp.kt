@@ -1,7 +1,7 @@
 package com.example.roomdaodatabase.app
 
 import android.app.Application
-import com.example.roomdaodatabase.data.Database
+import com.example.roomdaodatabase.data.db.Database
 
 class DatabaseApp: Application() {
 
